@@ -25,6 +25,8 @@ Java Programming Exercises, Practice, Solution
 
 ⌨️ Java8 Program
 
+⌨️ FindMaxValueIndexPlayer
+
 
 Thanks!
 
