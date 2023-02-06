@@ -23,12 +23,12 @@ public class CyclicRotation {
 
     public int[] solution(int[] A, int k){
         int[] result = new int[A.length];
-        int lastIndex = A.length -1;
+        int rotateIndex = A.length - k;
         int startIndex = 0;
 
         for(int x=0;x<k;x++){
-            result[x] = A[lastIndex];
-            lastIndex--;
+            result[x] = A[rotateIndex];
+            rotateIndex++;
         }
 
         for(int x=k;x<A.length;x++){
@@ -42,8 +42,8 @@ public class CyclicRotation {
         CyclicRotation cyclicRotation = new CyclicRotation();
         int[] result = cyclicRotation.solution(new int[] {3, 8, 9, 7, 6}, 3);
         System.out.println("Result");
-        for(int x=0;x<result.length;x++){
-            System.out.println(result[x]);
+        for (int i : result) {
+            System.out.println(i);
         }
 
     }
