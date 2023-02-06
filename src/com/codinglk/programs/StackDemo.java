@@ -2,14 +2,14 @@ package com.codinglk.programs;
 
 import java.util.Stack;
 /**
- * Counts how many times the substring appears in the larger string.
+ * STACK Demo
  * @author  codinglk
  */
 public class StackDemo {
-    public static void main(String args[])
+    public static void main(String[] args)
     {
         // Creating an empty Stack
-        Stack<String> STACK = new Stack<String>();
+        Stack<String> STACK = new Stack<>();
 
         // Use push() to add elements into the Stack
         STACK.push("Welcome");
