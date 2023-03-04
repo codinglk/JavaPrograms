@@ -44,7 +44,7 @@ import java.util.List;
  */
 public class TapeEquilibrium {
 
-    public int solution(int[] A){
+    public int solution1(int[] A){
         List<Integer> list = new ArrayList<>();
         int sum1=0;
 
@@ -64,9 +64,27 @@ public class TapeEquilibrium {
         return list.get(0);
     }
 
+    // It is better than solution1
+    public int solution2(int[] A){
+        int leftSum = A[0];
+        int rightSum = 0;
+        for (int x : A) rightSum += x ;
+        rightSum -= leftSum;
+
+        int diff =  Math.abs(leftSum - rightSum);
+        for(int i=1; i < A.length -1; i++){
+            leftSum += A[i];
+            rightSum -= A[i];
+            int currentDiff = Math.abs(leftSum - rightSum);
+            if(currentDiff < diff) diff = currentDiff;
+        }
+        return diff;
+    }
+
     public static void main(String[] args){
         TapeEquilibrium tapeEquilibrium = new TapeEquilibrium();
-        System.out.println(tapeEquilibrium.solution(new int[] {3, 1, 2, 4, 3}));
+        System.out.println(tapeEquilibrium.solution1(new int[] {3, 1, 2, 4, 3}));
+        System.out.println(tapeEquilibrium.solution2(new int[] {3, 1, 2, 4, 3}));
     }
 
 }
