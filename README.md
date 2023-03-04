@@ -29,6 +29,8 @@ Java Programming Exercises, Practice, Solution
 
 ⌨️ ReverseOrderUsingRecursion
 
+⌨️ PermMissingElement
+
 Thanks!
 
 codinglk
