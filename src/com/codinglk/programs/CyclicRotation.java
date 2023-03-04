@@ -21,7 +21,7 @@ package com.codinglk.programs;
  */
 public class CyclicRotation {
 
-    public int[] solution(int[] A, int k){
+    public int[] solution1(int[] A, int k){
         int[] result = new int[A.length];
         int rotateIndex = A.length - k;
         int startIndex = 0;
@@ -38,11 +38,26 @@ public class CyclicRotation {
         return result;
     }
 
+    // Get the result index using modula operator % , formula to get result index is (i + k) % A.length
+    public int[] solution2(int[] A, int k){
+        int[] result = new int[A.length];
+        for(int i=0; i < A.length; i++) {
+            result[(i + k) % A.length] = A[i];
+        }
+        return result;
+    }
+
     public static void main(String[] args){
         CyclicRotation cyclicRotation = new CyclicRotation();
-        int[] result = cyclicRotation.solution(new int[] {3, 8, 9, 7, 6}, 3);
-        System.out.println("Result");
-        for (int i : result) {
+        int[] result1 = cyclicRotation.solution1(new int[] {3, 8, 9, 7, 6}, 3);
+        System.out.println("Result1");
+        for (int i : result1) {
+            System.out.println(i);
+        }
+
+        int[] result2 = cyclicRotation.solution2(new int[] {3, 8, 9, 7, 6}, 3);
+        System.out.println("Result2");
+        for (int i : result2) {
             System.out.println(i);
         }
 
